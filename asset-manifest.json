@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/kortnibottini.github.io/landing-page/static/css/main.75766ffb.chunk.css",
-    "main.js": "/kortnibottini.github.io/landing-page/static/js/main.86288f83.chunk.js",
-    "main.js.map": "/kortnibottini.github.io/landing-page/static/js/main.86288f83.chunk.js.map",
-    "runtime-main.js": "/kortnibottini.github.io/landing-page/static/js/runtime-main.0c30b9e4.js",
-    "runtime-main.js.map": "/kortnibottini.github.io/landing-page/static/js/runtime-main.0c30b9e4.js.map",
-    "static/js/2.ab5f7da3.chunk.js": "/kortnibottini.github.io/landing-page/static/js/2.ab5f7da3.chunk.js",
-    "static/js/2.ab5f7da3.chunk.js.map": "/kortnibottini.github.io/landing-page/static/js/2.ab5f7da3.chunk.js.map",
-    "index.html": "/kortnibottini.github.io/landing-page/index.html",
-    "precache-manifest.6c1ef70e2bd1008928e58e00d54f6f01.js": "/kortnibottini.github.io/landing-page/precache-manifest.6c1ef70e2bd1008928e58e00d54f6f01.js",
-    "service-worker.js": "/kortnibottini.github.io/landing-page/service-worker.js",
-    "static/css/main.75766ffb.chunk.css.map": "/kortnibottini.github.io/landing-page/static/css/main.75766ffb.chunk.css.map",
-    "static/js/2.ab5f7da3.chunk.js.LICENSE.txt": "/kortnibottini.github.io/landing-page/static/js/2.ab5f7da3.chunk.js.LICENSE.txt",
-    "static/media/10.png": "/kortnibottini.github.io/landing-page/static/media/10.d7e82af1.png",
-    "static/media/3.png": "/kortnibottini.github.io/landing-page/static/media/3.2a660289.png",
-    "static/media/6.png": "/kortnibottini.github.io/landing-page/static/media/6.ed61a519.png",
-    "static/media/7.png": "/kortnibottini.github.io/landing-page/static/media/7.cb53fcf2.png",
-    "static/media/SharpGroteskBook22.otf": "/kortnibottini.github.io/landing-page/static/media/SharpGroteskBook22.1d9c0159.otf",
-    "static/media/logo.565eeed4.svg": "/kortnibottini.github.io/landing-page/static/media/logo.565eeed4.svg"
+    "main.css": "/landing-page/static/css/main.75766ffb.chunk.css",
+    "main.js": "/landing-page/static/js/main.9c058c7e.chunk.js",
+    "main.js.map": "/landing-page/static/js/main.9c058c7e.chunk.js.map",
+    "runtime-main.js": "/landing-page/static/js/runtime-main.bbd2f894.js",
+    "runtime-main.js.map": "/landing-page/static/js/runtime-main.bbd2f894.js.map",
+    "static/js/2.ab5f7da3.chunk.js": "/landing-page/static/js/2.ab5f7da3.chunk.js",
+    "static/js/2.ab5f7da3.chunk.js.map": "/landing-page/static/js/2.ab5f7da3.chunk.js.map",
+    "index.html": "/landing-page/index.html",
+    "precache-manifest.32425df54ba0af50f0cec4e4e0eb2511.js": "/landing-page/precache-manifest.32425df54ba0af50f0cec4e4e0eb2511.js",
+    "service-worker.js": "/landing-page/service-worker.js",
+    "static/css/main.75766ffb.chunk.css.map": "/landing-page/static/css/main.75766ffb.chunk.css.map",
+    "static/js/2.ab5f7da3.chunk.js.LICENSE.txt": "/landing-page/static/js/2.ab5f7da3.chunk.js.LICENSE.txt",
+    "static/media/10.png": "/landing-page/static/media/10.d7e82af1.png",
+    "static/media/3.png": "/landing-page/static/media/3.2a660289.png",
+    "static/media/6.png": "/landing-page/static/media/6.ed61a519.png",
+    "static/media/7.png": "/landing-page/static/media/7.cb53fcf2.png",
+    "static/media/SharpGroteskBook22.otf": "/landing-page/static/media/SharpGroteskBook22.1d9c0159.otf",
+    "static/media/logo.565eeed4.svg": "/landing-page/static/media/logo.565eeed4.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0c30b9e4.js",
+    "static/js/runtime-main.bbd2f894.js",
     "static/js/2.ab5f7da3.chunk.js",
     "static/css/main.75766ffb.chunk.css",
-    "static/js/main.86288f83.chunk.js"
+    "static/js/main.9c058c7e.chunk.js"
   ]
 }
