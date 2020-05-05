@@ -1,0 +1,74 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.p5Canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@keyframes rotate-animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes color-animate {
+  0% {
+    fill: #ffafa2;
+  }
+  14% {
+    fill: #ffd830;
+  }
+  28% {
+    fill: #813bf6;
+  }
+  42% {
+    fill: #ffcb95;
+  }
+
+  56% {
+    fill: #0061ff;
+  }
+
+  70% {
+    fill: #a2d39b;
+  }
+
+  100% {
+    fill: #fb570d;
+  }
+}
+
+.logo {
+  animation: rotate-animate 5s linear infinite,
+    color-animate 35s linear infinite;
+  height: 250px;
+  width: 250px;
+  margin-left: 50px;
+  margin-top: -30px;
+}
