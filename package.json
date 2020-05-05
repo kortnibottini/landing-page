@@ -1,16 +1,20 @@
 {
-  "name": "gratitude",
+  "name": "landing-page",
   "version": "0.1.0",
   "private": true,
+  "homepage": "kortnibottini.github.io/landing-page",
   "dependencies": {
+    "gh-pages": "^2.2.0",
     "matter-js": "^0.14.2",
     "p5": "1.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-p5-wrapper": "^2.0.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "^3.4.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -20,11 +24,7 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
