@@ -2,7 +2,7 @@
   "name": "landing-page",
   "version": "0.1.0",
   "private": true,
-  "homepage": "kortnibottini.github.io/landing-page",
+  "homepage": "https://kortnibottini.github.io/landing-page",
   "dependencies": {
     "gh-pages": "^2.2.0",
     "matter-js": "^0.14.2",
