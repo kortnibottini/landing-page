@@ -1,7 +1,7 @@
-import * as matter from "matter-js";
-import engine from "./engine";
+import * as matter from 'matter-js';
+import engine from './engine';
 
-export const NUM_OF_ICONS = 10;
+export const NUM_OF_ICONS = 12;
 
 export default class Icon {
   body = {
@@ -23,7 +23,7 @@ export default class Icon {
       this.x,
       this.y,
       this.img.width,
-      this.img.height
+      this.img.height,
     );
     matter.World.add(engine.world, this.body);
   }
@@ -33,7 +33,7 @@ export default class Icon {
       matter.Body.scale(
         this.body,
         this.img.width / this.width,
-        this.img.height / this.height
+        this.img.height / this.height,
       );
       this.width = this.img.width;
       this.height = this.img.height;

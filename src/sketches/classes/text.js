@@ -1,13 +1,13 @@
-import * as matter from "matter-js";
-import engine from "./engine";
+import * as matter from 'matter-js';
+import engine from './engine';
 
-const COLOR = "#ffafa2";
+const COLOR = '#fff';
 
 export default class Text {
   x = 0;
   y = 0;
   height = 80;
-  txt = "do yer best";
+  txt = 'do yer best';
 
   constructor(p, x, y, txt) {
     this.p = p;
@@ -21,7 +21,7 @@ export default class Text {
       this.x,
       this.y,
       this.width,
-      this.height
+      this.height,
     );
     matter.World.add(engine.world, this.body);
   }

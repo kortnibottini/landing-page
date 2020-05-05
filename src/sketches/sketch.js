@@ -1,9 +1,9 @@
-import * as ff from "./SharpGroteskBook22.otf";
-import Text from "./classes/text";
-import Boundaries from "./classes/boundaries";
-import Icon, { NUM_OF_ICONS } from "./classes/icon";
-import engine from "./classes/engine";
-import * as matter from "matter-js";
+import * as ff from './ITCAvantGardePro-Md.otf';
+import Text from './classes/text';
+import Boundaries from './classes/boundaries';
+import Icon, {NUM_OF_ICONS} from './classes/icon';
+import engine from './classes/engine';
+import * as matter from 'matter-js';
 
 const ICONS_REF = [...Array(NUM_OF_ICONS)].map((i, k) => k + 1);
 
@@ -31,39 +31,29 @@ const getNewSetOfIcons = array => {
 };
 
 const sayings = [
-  "props",
-  "real thanks",
-  "you rock my socks",
-  "bomb.com",
-  "appreciate it",
-  "thank you for realsies",
-  "much love",
-  "props",
-  "super cool",
-  "thanks yo",
-  "you changed the game"
+  'Hello.',
+  'I am a product designer',
+  'and AI enthusiast.',
+  'Solving problems big and small',
+  '@dropbox',
 ];
 export default function sketch(p) {
   let font;
   let movers = [];
   let options = [];
   let boundaries;
-
   const handleResize = () => {
     const viewport = window.document.body.getBoundingClientRect();
     p.resizeCanvas(viewport.width, viewport.height);
     boundaries.resizeBounds();
   };
-
   p.preload = () => {
     font = p.loadFont(ff);
   };
-
   p.setup = () => {
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     const viewport = window.document.body.getBoundingClientRect();
     p.createCanvas(viewport.width, viewport.height);
-
     p.textFont(font);
     sayings.forEach(n => {
       const txt = new Text(p, p.random(0, p.width - 100), 200, n);
@@ -72,20 +62,17 @@ export default function sketch(p) {
     boundaries = new Boundaries(p);
     matter.Engine.run(engine);
   };
-
   p.draw = () => {
-    p.background("white");
+    p.background('#3624FF');
     matter.Engine.update(engine);
     for (var i = 0; i < movers.length; i++) {
       movers[i].display(font);
     }
   };
-
   p.mousePressed = () => {
     if (options.length <= 0) {
       options = getNewSetOfIcons(ICONS_REF);
     }
-
     const icon = options.pop();
     movers.push(new Icon(p, p.mouseX, p.mouseY, icon));
   };
