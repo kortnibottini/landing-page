@@ -7,9 +7,6 @@
     "gh-pages": "^2.2.0",
     "matter-js": "^0.14.2",
     "p5": "1.0.0",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-p5-wrapper": "^2.0.0",
     "react-scripts": "^3.4.1"
   },
   "scripts": {

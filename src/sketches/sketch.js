@@ -42,26 +42,30 @@ export default function sketch(p) {
   let movers = [];
   let options = [];
   let boundaries;
+
   const handleResize = () => {
     const viewport = window.document.body.getBoundingClientRect();
     p.resizeCanvas(viewport.width, viewport.height);
     boundaries.resizeBounds();
   };
+
   p.preload = () => {
     font = p.loadFont(ff);
   };
+
   p.setup = () => {
     window.addEventListener('resize', handleResize);
     const viewport = window.document.body.getBoundingClientRect();
     p.createCanvas(viewport.width, viewport.height);
     p.textFont(font);
     sayings.forEach(n => {
-      const txt = new Text(p, p.random(0, p.width - 100), 200, n);
+      const txt = new Text(p, p.random(0, p.width - 100), 0, n);
       movers.push(txt);
     });
     boundaries = new Boundaries(p);
     matter.Engine.run(engine);
   };
+
   p.draw = () => {
     p.background('#3624FF');
     matter.Engine.update(engine);
@@ -69,6 +73,7 @@ export default function sketch(p) {
       movers[i].display(font);
     }
   };
+
   p.mousePressed = () => {
     if (options.length <= 0) {
       options = getNewSetOfIcons(ICONS_REF);

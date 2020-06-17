@@ -3,6 +3,11 @@ import engine from './engine';
 
 export const NUM_OF_ICONS = 12;
 
+function getWidth(length, ratio) {
+  var width = length / Math.sqrt(1 / (Math.pow(ratio, 2) + 1));
+  return Math.round(width);
+}
+
 export default class Icon {
   body = {
     position: {
@@ -17,6 +22,7 @@ export default class Icon {
     this.y = y;
     this.src = require(`./icons/${icon}.png`);
     this.img = p.loadImage(this.src);
+    this.ratio = this.img.width / this.img.height;
     this.width = this.img.width;
     this.height = this.img.height;
     this.body = matter.Bodies.rectangle(
@@ -30,11 +36,10 @@ export default class Icon {
 
   display() {
     if (this.img.height !== this.height) {
-      matter.Body.scale(
-        this.body,
-        this.img.width / this.width,
-        this.img.height / this.height,
-      );
+      const rat = this.p.width / this.p.height;
+      const width = getWidth(this.img.width / 2, rat);
+      this.img.resize(width, 0);
+      matter.Body.scale(this.body, this.img.width, this.img.height);
       this.width = this.img.width;
       this.height = this.img.height;
     }

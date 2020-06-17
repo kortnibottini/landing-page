@@ -6,7 +6,7 @@ const COLOR = '#fff';
 export default class Text {
   x = 0;
   y = 0;
-  height = 80;
+  height = 0;
   txt = 'do yer best';
 
   constructor(p, x, y, txt) {
@@ -15,6 +15,7 @@ export default class Text {
     this.y = y;
     this.txt = txt || this.txt;
 
+    this.height = this.p.width / this.p.height * 50;
     this.width = this.p.textWidth(this.txt);
     this.p.textSize(this.height);
     this.body = matter.Bodies.rectangle(
@@ -22,6 +23,9 @@ export default class Text {
       this.y,
       this.width,
       this.height,
+      {
+        restitution: 0.9,
+      },
     );
     matter.World.add(engine.world, this.body);
   }
