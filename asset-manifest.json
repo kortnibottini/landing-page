@@ -1,27 +1,26 @@
 {
   "files": {
-    "main.css": "/landing-page/static/css/main.2b7d77bc.chunk.css",
-    "main.js": "/landing-page/static/js/main.b287e505.chunk.js",
-    "main.js.map": "/landing-page/static/js/main.b287e505.chunk.js.map",
+    "main.css": "/landing-page/static/css/main.d7f46841.chunk.css",
+    "main.js": "/landing-page/static/js/main.fb77777b.chunk.js",
+    "main.js.map": "/landing-page/static/js/main.fb77777b.chunk.js.map",
     "runtime-main.js": "/landing-page/static/js/runtime-main.bbd2f894.js",
     "runtime-main.js.map": "/landing-page/static/js/runtime-main.bbd2f894.js.map",
-    "static/js/2.ab5f7da3.chunk.js": "/landing-page/static/js/2.ab5f7da3.chunk.js",
-    "static/js/2.ab5f7da3.chunk.js.map": "/landing-page/static/js/2.ab5f7da3.chunk.js.map",
+    "static/js/2.5bd28b0b.chunk.js": "/landing-page/static/js/2.5bd28b0b.chunk.js",
+    "static/js/2.5bd28b0b.chunk.js.map": "/landing-page/static/js/2.5bd28b0b.chunk.js.map",
     "index.html": "/landing-page/index.html",
-    "precache-manifest.839be1b81fc18f673a05ac56cadea83c.js": "/landing-page/precache-manifest.839be1b81fc18f673a05ac56cadea83c.js",
+    "precache-manifest.e6084c3fc0f72acc942d453f224cb306.js": "/landing-page/precache-manifest.e6084c3fc0f72acc942d453f224cb306.js",
     "service-worker.js": "/landing-page/service-worker.js",
-    "static/css/main.2b7d77bc.chunk.css.map": "/landing-page/static/css/main.2b7d77bc.chunk.css.map",
-    "static/js/2.ab5f7da3.chunk.js.LICENSE.txt": "/landing-page/static/js/2.ab5f7da3.chunk.js.LICENSE.txt",
+    "static/css/main.d7f46841.chunk.css.map": "/landing-page/static/css/main.d7f46841.chunk.css.map",
+    "static/js/2.5bd28b0b.chunk.js.LICENSE.txt": "/landing-page/static/js/2.5bd28b0b.chunk.js.LICENSE.txt",
     "static/media/12.png": "/landing-page/static/media/12.f4d1d392.png",
     "static/media/3.png": "/landing-page/static/media/3.51ac72ad.png",
     "static/media/7.png": "/landing-page/static/media/7.f15db908.png",
-    "static/media/ITCAvantGardePro-Md.otf": "/landing-page/static/media/ITCAvantGardePro-Md.ef96d38e.otf",
-    "static/media/logo.d2fae18d.svg": "/landing-page/static/media/logo.d2fae18d.svg"
+    "static/media/ITCAvantGardePro-Md.otf": "/landing-page/static/media/ITCAvantGardePro-Md.ef96d38e.otf"
   },
   "entrypoints": [
     "static/js/runtime-main.bbd2f894.js",
-    "static/js/2.ab5f7da3.chunk.js",
-    "static/css/main.2b7d77bc.chunk.css",
-    "static/js/main.b287e505.chunk.js"
+    "static/js/2.5bd28b0b.chunk.js",
+    "static/css/main.d7f46841.chunk.css",
+    "static/js/main.fb77777b.chunk.js"
   ]
 }
