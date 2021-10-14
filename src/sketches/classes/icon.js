@@ -1,7 +1,9 @@
-import * as matter from 'matter-js';
-import engine from './engine';
+import * as matter from "matter-js";
+import engine from "./engine";
+import { getViewportSize } from "../utils/math";
+import { getDeviceRatio } from "../utils/canvas";
 
-export const NUM_OF_ICONS = 12;
+export const NUM_OF_ICONS = 10;
 
 function getWidth(length, ratio) {
   var width = length / Math.sqrt(1 / (Math.pow(ratio, 2) + 1));
@@ -9,46 +11,45 @@ function getWidth(length, ratio) {
 }
 
 export default class Icon {
-  body = {
-    position: {
-      x: 0,
-      y: 0,
-    },
-  };
-
-  constructor(p, x, y, icon) {
-    this.p = p;
+  constructor(ctx, x, y, icon) {
+    this.ctx = ctx;
     this.x = x;
     this.y = y;
-    this.src = require(`./icons/${icon}.png`);
-    this.img = p.loadImage(this.src);
-    this.ratio = this.img.width / this.img.height;
-    this.width = this.img.width;
-    this.height = this.img.height;
+    const viewport = getViewportSize();
+
+    this.img = window._sketch_image_sources[icon - 1];
+    const ratio = viewport.width / viewport.height;
+    this.height = ratio * 150;
+    this.img.height = this.height;
+    this.width = this.img.height;
+
     this.body = matter.Bodies.rectangle(
       this.x,
       this.y,
-      this.img.width,
-      this.img.height,
+      this.width,
+      this.height
     );
     matter.World.add(engine.world, this.body);
   }
 
   display() {
-    if (this.img.height !== this.height) {
-      const rat = this.p.width / this.p.height;
-      const width = getWidth(this.img.width / 2, rat);
-      this.img.resize(width, 0);
-      matter.Body.scale(this.body, this.img.width, this.img.height);
-      this.width = this.img.width;
-      this.height = this.img.height;
-    }
-    this.p.push();
-    this.p.rectMode(this.p.CENTER);
-    this.p.imageMode(this.p.CENTER);
-    this.p.translate(this.body.position.x, this.body.position.y);
-    this.p.rotate(this.body.angle);
-    this.p.image(this.img, 0, 0);
-    this.p.pop();
+    const { ratio } = getDeviceRatio(this.ctx);
+    this.ctx.setTransform(
+      ratio,
+      0,
+      0,
+      ratio,
+      this.body.position.x * ratio,
+      this.body.position.y * ratio
+    ); // sets scale and origin
+    this.ctx.rotate(this.body.angle);
+    this.ctx.drawImage(
+      this.img,
+      -this.width / 2,
+      -this.height / 2,
+      this.height,
+      this.width
+    );
+    this.ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
   }
 }

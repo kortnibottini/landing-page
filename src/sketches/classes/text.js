@@ -1,49 +1,55 @@
-import * as matter from 'matter-js';
-import engine from './engine';
+import * as matter from "matter-js";
+import engine from "./engine";
+import { getRandomIntInclusive, getViewportSize } from ".././utils/math";
 
-const COLOR = '#fff';
+const COLOR = "#000";
 
 export default class Text {
   x = 0;
   y = 0;
   height = 0;
-  txt = 'do yer best';
+  txt = "do yer best";
+  el;
+  ctx;
 
-  constructor(p, x, y, txt) {
-    this.p = p;
-    this.x = x;
-    this.y = y;
+  constructor(ctx, txt) {
+    const viewport = getViewportSize();
+    this.x = getRandomIntInclusive(0, viewport.width - 100);
     this.txt = txt || this.txt;
+    this.ctx = ctx;
 
-    this.height = this.p.width / this.p.height * 50;
-    this.width = this.p.textWidth(this.txt);
-    this.p.textSize(this.height);
+    this.height = (viewport.width / viewport.height) * 60;
+    this.ctx.font = `${this.height}px itc-avant-garde-gothic-pro`;
+    const size = ctx.measureText(txt);
+    this.width = size.width;
+    this.ctx.fillText(txt, this.x, this.y);
+
     this.body = matter.Bodies.rectangle(
       this.x,
       this.y,
       this.width,
       this.height,
       {
-        restitution: 0.9,
-      },
+        restitution: 0.9
+      }
     );
     matter.World.add(engine.world, this.body);
   }
 
   display(font) {
-    const textWidth = this.p.textWidth(this.txt);
-    if (this.width !== textWidth) {
-      matter.Body.scale(this.body, textWidth / this.width, 1);
-      this.width = textWidth;
+    this.ctx.save();
+    this.ctx.font = `${this.height}px itc-avant-garde-gothic-pro`;
+    const textSize = this.ctx.measureText(this.txt);
+    if (this.width !== textSize.width) {
+      matter.Body.scale(this.body, textSize.width / this.width, 1);
+      this.width = textSize.width;
     }
-    this.p.push();
-    this.p.noStroke();
-    this.p.textAlign(this.p.CENTER, this.p.CENTER);
-    this.p.rectMode(this.p.CENTER);
-    this.p.translate(this.body.position.x, this.body.position.y);
-    this.p.rotate(this.body.angle);
-    this.p.fill(COLOR);
-    this.p.text(this.txt, 0, 0);
-    this.p.pop();
+
+    this.ctx.textBaseline = "middle";
+    this.ctx.textAlign = "center";
+    this.ctx.translate(this.body.position.x, this.body.position.y);
+    this.ctx.rotate(this.body.angle);
+    this.ctx.fillText(this.txt, 0, 0);
+    this.ctx.restore();
   }
 }

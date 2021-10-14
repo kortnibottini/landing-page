@@ -1,9 +1,11 @@
-import * as ff from './ITCAvantGardePro-Md.otf';
-import Text from './classes/text';
-import Boundaries from './classes/boundaries';
-import Icon, {NUM_OF_ICONS} from './classes/icon';
-import engine from './classes/engine';
-import * as matter from 'matter-js';
+import * as matter from "matter-js";
+
+import Text from "./classes/text";
+import Boundaries from "./classes/boundaries";
+import Icon, { NUM_OF_ICONS } from "./classes/icon";
+import engine from "./classes/engine";
+import { getViewportSize } from "./utils/math";
+import { scaleCanvas } from "./utils/canvas";
 
 const ICONS_REF = [...Array(NUM_OF_ICONS)].map((i, k) => k + 1);
 
@@ -31,54 +33,67 @@ const getNewSetOfIcons = array => {
 };
 
 const sayings = [
-  'Hello.',
-  'I am a product designer',
-  'and AI enthusiast.',
-  'Solving problems big and small',
-  '@dropbox',
+  "Hello.",
+  "I am a product designer",
+  "and AI enthusiast.",
+  "Solving problems",
+  "big and small",
+  "@snap"
 ];
-export default function sketch(p) {
-  let font;
-  let movers = [];
-  let options = [];
-  let boundaries;
 
-  const handleResize = () => {
-    const viewport = window.document.body.getBoundingClientRect();
-    p.resizeCanvas(viewport.width, viewport.height);
-    boundaries.resizeBounds();
-  };
+export default class sketch {
+  font;
+  movers = [];
+  options = [];
+  boundaries;
+  canvas;
+  ctx;
 
-  p.preload = () => {
-    font = p.loadFont(ff);
-  };
+  constructor() {
+    const { width, height } = getViewportSize();
+    this.canvas = document.createElement("canvas");
+    this.canvas.setAttribute("data-pixel-ratio", "2");
+    this.ctx = this.canvas.getContext("2d");
+    scaleCanvas(this.canvas, this.ctx, width, height);
 
-  p.setup = () => {
-    window.addEventListener('resize', handleResize);
-    const viewport = window.document.body.getBoundingClientRect();
-    p.createCanvas(viewport.width, viewport.height);
-    p.textFont(font);
+    document.body.appendChild(this.canvas);
     sayings.forEach(n => {
-      const txt = new Text(p, p.random(0, p.width - 100), 0, n);
-      movers.push(txt);
+      const txt = new Text(this.ctx, n);
+      this.movers.push(txt);
     });
-    boundaries = new Boundaries(p);
+    this.boundaries = new Boundaries();
+
     matter.Engine.run(engine);
+
+    window.addEventListener("resize", this.handleResize);
+    document.body.addEventListener("click", this.handleClick);
+
+    requestAnimationFrame(this.draw);
+  }
+
+  handleResize = () => {
+    const { width, height } = getViewportSize();
+    scaleCanvas(this.canvas, this.ctx, width, height);
+    this.boundaries.resizeBounds();
   };
 
-  p.draw = () => {
-    p.background('#3624FF');
+  draw = () => {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     matter.Engine.update(engine);
-    for (var i = 0; i < movers.length; i++) {
-      movers[i].display(font);
+    requestAnimationFrame(this.draw);
+
+    for (var i = 0; i < this.movers.length; i++) {
+      this.movers[i].display();
     }
   };
 
-  p.mousePressed = () => {
-    if (options.length <= 0) {
-      options = getNewSetOfIcons(ICONS_REF);
+  handleClick = e => {
+    e.preventDefault();
+    if (this.options.length <= 0) {
+      this.options = getNewSetOfIcons(ICONS_REF);
     }
-    const icon = options.pop();
-    movers.push(new Icon(p, p.mouseX, p.mouseY, icon));
+    const icon = this.options.pop();
+
+    this.movers.push(new Icon(this.ctx, e.clientX, e.clientY, icon));
   };
 }
