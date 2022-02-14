@@ -1,32 +1,32 @@
 {
   "files": {
     "main.css": "/landing-page/static/css/main.29ba2332.chunk.css",
-    "main.js": "/landing-page/static/js/main.0e5a6e73.chunk.js",
-    "main.js.map": "/landing-page/static/js/main.0e5a6e73.chunk.js.map",
+    "main.js": "/landing-page/static/js/main.d348d53d.chunk.js",
+    "main.js.map": "/landing-page/static/js/main.d348d53d.chunk.js.map",
     "runtime-main.js": "/landing-page/static/js/runtime-main.8c4e35fe.js",
     "runtime-main.js.map": "/landing-page/static/js/runtime-main.8c4e35fe.js.map",
     "static/js/2.a21bda2e.chunk.js": "/landing-page/static/js/2.a21bda2e.chunk.js",
     "static/js/2.a21bda2e.chunk.js.map": "/landing-page/static/js/2.a21bda2e.chunk.js.map",
     "index.html": "/landing-page/index.html",
-    "precache-manifest.4c9422807e6c281ac08b6d42f595551f.js": "/landing-page/precache-manifest.4c9422807e6c281ac08b6d42f595551f.js",
+    "precache-manifest.003f9adf7438477b3d1be8517ce6a897.js": "/landing-page/precache-manifest.003f9adf7438477b3d1be8517ce6a897.js",
     "service-worker.js": "/landing-page/service-worker.js",
     "static/css/main.29ba2332.chunk.css.map": "/landing-page/static/css/main.29ba2332.chunk.css.map",
-    "static/media/0.svg": "/landing-page/static/media/0.b47eddbc.svg",
-    "static/media/1.svg": "/landing-page/static/media/1.5de0e29b.svg",
-    "static/media/2.svg": "/landing-page/static/media/2.579fd197.svg",
-    "static/media/3.svg": "/landing-page/static/media/3.8f9850cc.svg",
-    "static/media/4.svg": "/landing-page/static/media/4.aba1920a.svg",
-    "static/media/5.svg": "/landing-page/static/media/5.bb659f69.svg",
-    "static/media/6.svg": "/landing-page/static/media/6.5722e8ca.svg",
-    "static/media/7.svg": "/landing-page/static/media/7.4368c096.svg",
-    "static/media/8.svg": "/landing-page/static/media/8.d3c2656a.svg",
-    "static/media/9.svg": "/landing-page/static/media/9.2396eea4.svg",
+    "static/media/0.svg": "/landing-page/static/media/0.ebdcdbec.svg",
+    "static/media/1.svg": "/landing-page/static/media/1.8fa5f7f4.svg",
+    "static/media/2.svg": "/landing-page/static/media/2.07c3340a.svg",
+    "static/media/3.svg": "/landing-page/static/media/3.80cc9e7a.svg",
+    "static/media/4.svg": "/landing-page/static/media/4.bdf518bb.svg",
+    "static/media/5.svg": "/landing-page/static/media/5.fd099edc.svg",
+    "static/media/6.svg": "/landing-page/static/media/6.9c8ae5f5.svg",
+    "static/media/7.svg": "/landing-page/static/media/7.bdf88d54.svg",
+    "static/media/8.svg": "/landing-page/static/media/8.a9ffa91a.svg",
+    "static/media/9.svg": "/landing-page/static/media/9.2762c7ff.svg",
     "static/media/index.css": "/landing-page/static/media/ITCAvantGardePro-Demi.3037e0d1.otf"
   },
   "entrypoints": [
     "static/js/runtime-main.8c4e35fe.js",
     "static/js/2.a21bda2e.chunk.js",
     "static/css/main.29ba2332.chunk.css",
-    "static/js/main.0e5a6e73.chunk.js"
+    "static/js/main.d348d53d.chunk.js"
   ]
 }
