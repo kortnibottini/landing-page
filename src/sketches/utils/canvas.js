@@ -45,7 +45,7 @@ export function preloadImage(src) {
     image.style.left = "-9999px";
     image.style.visibility = "hidden";
     document.body.appendChild(image);
-    image.onload = ev => {
+    image.onload = (ev) => {
       res(image);
     };
     image.src = src;

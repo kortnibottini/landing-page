@@ -5,17 +5,12 @@ import { preloadImage } from "./sketches/utils/canvas";
 
 const renderCanvas = () => {
   const iconSet = new Array(NUM_OF_ICONS).fill().map((_, key) => {
-    const ext =
-      navigator.userAgent.indexOf("Chrome") !== -1 ||
-      navigator.userAgent.indexOf("Safari") !== -1
-        ? "svg"
-        : "png";
-    const src = require(`./sketches/classes/icons/${key}.${ext}`);
+    const src = require(`./sketches/classes/icons/${key}.svg`);
 
     return preloadImage(src);
   });
 
-  Promise.all(iconSet).then(data => {
+  Promise.all(iconSet).then((data) => {
     window._sketch_image_sources = data;
     const P5 = new sketch();
   });

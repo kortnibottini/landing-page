@@ -1,6 +1,6 @@
 import * as matter from "matter-js";
 import engine from "./engine";
-import { getViewportSize } from "../utils/math";
+import { getViewportSize, getRandomInRange } from "../utils/math";
 import { getDeviceRatio } from "../utils/canvas";
 
 export const NUM_OF_ICONS = 10;
@@ -19,9 +19,14 @@ export default class Icon {
 
     this.img = window._sketch_image_sources[icon - 1];
     const ratio = viewport.width / viewport.height;
-    this.height = ratio * 150;
-    this.img.height = this.height;
-    this.width = this.img.height;
+    const dimensionalGrowthHeight = this.img.height >= this.img.width;
+    const imgRatio = dimensionalGrowthHeight
+      ? this.img.width / this.img.height
+      : this.img.height / this.img.width;
+    const randomBasis = ratio * getRandomInRange(0.1, 2);
+    console.log(randomBasis);
+    this.height = this.img.height * imgRatio * ratio * randomBasis;
+    this.width = this.img.width * imgRatio * ratio * randomBasis;
 
     this.body = matter.Bodies.rectangle(
       this.x,
@@ -47,8 +52,8 @@ export default class Icon {
       this.img,
       -this.width / 2,
       -this.height / 2,
-      this.height,
-      this.width
+      this.width,
+      this.height
     );
     this.ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
   }
