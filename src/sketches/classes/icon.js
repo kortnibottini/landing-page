@@ -23,7 +23,7 @@ export default class Icon {
     const imgRatio = dimensionalGrowthHeight
       ? this.img.width / this.img.height
       : this.img.height / this.img.width;
-    const randomBasis = ratio * getRandomInRange(0.1, 2);
+    const randomBasis = ratio * getRandomInRange(0.1, 1);
     console.log(randomBasis);
     this.height = this.img.height * imgRatio * ratio * randomBasis;
     this.width = this.img.width * imgRatio * ratio * randomBasis;
