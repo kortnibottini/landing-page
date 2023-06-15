@@ -28,7 +28,7 @@ function shuffle(array) {
   return array;
 }
 
-const getNewSetOfIcons = array => {
+const getNewSetOfIcons = (array) => {
   return shuffle([...array]);
 };
 
@@ -38,7 +38,7 @@ const sayings = [
   "and AI enthusiast.",
   "Solving problems",
   "big and small",
-  "@snap"
+  "@cash app",
 ];
 
 export default class sketch {
@@ -57,7 +57,7 @@ export default class sketch {
     scaleCanvas(this.canvas, this.ctx, width, height);
 
     document.body.appendChild(this.canvas);
-    sayings.forEach(n => {
+    sayings.forEach((n) => {
       const txt = new Text(this.ctx, n);
       this.movers.push(txt);
     });
@@ -87,7 +87,7 @@ export default class sketch {
     }
   };
 
-  handleClick = e => {
+  handleClick = (e) => {
     e.preventDefault();
     if (this.options.length <= 0) {
       this.options = getNewSetOfIcons(ICONS_REF);
